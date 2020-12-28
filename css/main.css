@@ -4,9 +4,19 @@
     box-sizing: border-box;
 }
 
+body {
+    overflow-x: hidden;
+}
+
 header {
     background-color: #000;
     width: 100%;
+}
+
+.background-image {
+    background: url('../image/background.jpg');
+    min-height: 100vh;
+    background-size: cover;
 }
 
 nav {
@@ -28,6 +38,7 @@ nav {
     width: 25px;
     height: 4px;
     margin: 15% 0;
+    transition: transform 0.5s ease;
 }
 
 .logo {
@@ -53,6 +64,49 @@ nav {
     font-family: 'Heebo', sans-serif;
 }
 
-@media screen and
+@media screen and (max-width: 1024px) {
+    .nav-links {
+        width: 40%;
+    }
+}
 
+@media screen and (max-width: 768px) {
+    body {
+        overflow-x: hidden;
+    }   
+    .nav-links {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        flex-direction: column;
+        width: 50%;
+        height: 92vh;
+        position: absolute;
+        top: 12%;
+        right: 0;
+        transform: translateX(100%);
+        background-color: #000;
+        transition: transform 0.5s ease-in;
+    }
+    .burger {
+        display: block;
+    }
+}
+
+.nav-links-open {
+    transform: translateX(0);
+}
+
+.burger-line .line1 {
+    transform: rotate(-45deg);
+}
+
+.burger-line .line2 {
+    transform: translateX(3px);
+    width: 28px;
+}
+
+.burger-line .line3 {
+    transform: rotate(45deg);
+}
 
